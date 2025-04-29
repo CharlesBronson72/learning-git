@@ -1,10 +1,11 @@
 #include <iostream>
 
-void output(int arr[])
+void output(int (&arr)[10])
 {
-  for (int i = 0; i < 10; ++i)
+    std::cout << "Adresse des arr[]: " << &arr << std::endl;
+    for (int i = 0; i < 10; ++i)
     {
-        std::cout << "Adresse der arr[" << i << "] : " << &arr[i] << "\tInhalt : " << arr[i]    << "\n";
+        std::cout << "Adresse der arr[" << i << "] : " << &arr[i] << "\tInhalt : " << arr[i] << "\n";
     }
     std::cout << std::endl;
 }
@@ -12,7 +13,7 @@ void output(int arr[])
 int main()
 {
     std::cout << "Hello, World!" << std::endl;
-    int *a = new int[10] {5, 4, 3, 2, 1, 0, 0, 0, 0, 0};
+    int *a = new int[10]{};
     std::cout << "Adresse des Pointer a: " << a << std::endl;
     for (int i = 0; i < 10; ++i)
     {
@@ -32,9 +33,9 @@ int main()
 
     std::cout << "Memory allocated and deallocated successfully." << std::endl;
 
-    int arr[10] = {0};
-    std::cout << "Adresse des arr[]: " << &arr << std::endl;
-      output(arr[]);
+    int arr[10] = {};
+    std::cout << "Adresse des arr[]: " << arr << std::endl;
+    output(arr);
     for (int i = 0; i < 10; ++i)
     {
         std::cout << arr[i] << " ";
@@ -50,6 +51,9 @@ int main()
         std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
+
+    output(arr);
+
     std::cout << "Array initialized successfully." << std::endl;
 
     return 0;
