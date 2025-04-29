@@ -33,9 +33,11 @@ int main()
 
     std::cout << "Memory allocated and deallocated successfully." << std::endl;
 
+
     int arr[10] = {};
     std::cout << "Adresse des arr[]: " << arr << std::endl;
     output(arr);
+
     for (int i = 0; i < 10; ++i)
     {
         std::cout << arr[i] << " ";
