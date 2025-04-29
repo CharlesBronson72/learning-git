@@ -1,5 +1,14 @@
 #include <iostream>
 
+void output(int arr[])
+{
+  for (int i = 0; i < 10; ++i)
+    {
+        std::cout << "Adresse der arr[" << i << "] : " << &arr[i] << "\tInhalt : " << arr[i]    << "\n";
+    }
+    std::cout << std::endl;
+}
+
 int main()
 {
     std::cout << "Hello, World!" << std::endl;
@@ -25,11 +34,7 @@ int main()
 
     int arr[10] = {0};
     std::cout << "Adresse des arr[]: " << &arr << std::endl;
-    for (int i = 0; i < 10; ++i)
-    {
-        std::cout << "Adresse der arr[" << i << "] : " << &arr[i] << "\tInhalt : " << arr[i]    << "\n";
-    }
-    std::cout << std::endl;
+      output(arr[]);
     for (int i = 0; i < 10; ++i)
     {
         std::cout << arr[i] << " ";
